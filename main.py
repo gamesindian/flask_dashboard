@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -109,4 +111,4 @@ def page_not_found(e):
     return render_template('500.html'), 500
 
 if __name__ == '__main__':
-    app.run(host="localhost", port=8000, debug=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
