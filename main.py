@@ -126,4 +126,4 @@ def page_not_found(e):
     return render_template('500.html'), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv(host='0.0.0.0', port=$PORT))
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
